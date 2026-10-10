@@ -13,6 +13,10 @@
 
 - Never run `npm publish`, create a release tag, or change repository
   visibility without the owner's explicit approval of that exact release.
+- Releases publish through `.github/workflows/release.yml` when a GitHub
+  release is published. npm trusted publishing authenticates it, so there is
+  no npm token. The release tag must be `v` plus the `package.json` version.
+  A version already on npm is skipped, not republished.
 - Bump `version` in `package.json` and add a `CHANGELOG.md` entry in the same
   pull request as the change it describes.
 - A release needs hands-on owner testing against the real panel first.
