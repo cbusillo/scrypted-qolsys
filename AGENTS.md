@@ -6,7 +6,7 @@
   branch, push it, and open a pull request.
 - Use normal merge commits. Do not squash or rebase pull requests.
 - Run `npm ci`, `npm test` and `npm run build` before review, and wait for the
-  required `validation` check on the current PR head before merge.
+  `validation` check on the current PR head before merge.
 - Delete merged task branches and clean merged worktrees during closeout.
 
 ## Releases

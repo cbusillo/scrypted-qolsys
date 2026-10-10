@@ -22,7 +22,11 @@
     "inspection": {
       "tool": "jetbrains",
       "ide": "PyCharm",
-      "scopePreference": ["changed_files", "directory", "whole_project"]
+      "scopePreference": [
+        "changed_files",
+        "directory",
+        "whole_project"
+      ]
     },
     "docsRequiredWhen": [
       "user-visible settings or behavior change",
@@ -32,7 +36,9 @@
       "validation gate changes"
     ]
   },
-  "importantWorkflows": ["Validation"],
+  "importantWorkflows": [
+    "Validation"
+  ],
   "githubSettings": {
     "expected": {
       "hasIssues": true,
@@ -44,21 +50,33 @@
       "deleteBranchOnMerge": true,
       "actionsDefaultWorkflowPermissions": "read",
       "actionsCanCreatePullRequests": false,
-      "actionsRequireShaPinning": true
+      "actionsRequireShaPinning": true,
+      "privateVulnerabilityReporting": true,
+      "secretScanning": true,
+      "secretScanningPushProtection": true,
+      "dependabotSecurityUpdates": true
     }
   },
   "pullRequests": {
     "preferredMergeMethod": "merge",
-    "allowedMergeMethods": ["merge"]
+    "allowedMergeMethods": [
+      "merge"
+    ]
   },
   "branchProtection": {
     "main": {
+      "system": "rulesets",
+      "rulesets": [
+        "Only the owner and automation update the default branch",
+        "Code-owner review for DIRECTION.md"
+      ],
+      "source": "codex-skills github/scripts/gh-rulesets.py standard pair",
       "requiresPullRequest": true,
-      "requiredStatusChecks": ["validation"],
-      "requiresStrictStatusChecks": true,
-      "requiredApprovals": 0,
-      "blocksForcePushes": true,
-      "blocksDeletion": true
+      "bypass": [
+        "repository admin",
+        "automation GitHub App"
+      ],
+      "requiredStatusChecks": []
     }
   },
   "release": {
