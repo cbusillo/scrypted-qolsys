@@ -1,0 +1,46 @@
+name: Bug report
+description: Something in the plugin does not work as described.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Do not include pairing keys, panel addresses, photos or video.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: input
+    id: panel
+    attributes:
+      label: Panel model and firmware
+      placeholder: IQ Panel 2+, firmware 2.8.1
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Plugin and Scrypted versions
+      placeholder: plugin 0.1.0, Scrypted 0.x
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Pairing
+        - Snapshots
+        - Live view
+        - Settings
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Plugin log
+      description: The relevant part of the plugin's log in Scrypted, with addresses and identifiers removed.
+      render: text
