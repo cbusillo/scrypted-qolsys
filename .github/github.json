@@ -1,0 +1,100 @@
+{
+  "defaultBranch": "main",
+  "projectType": "scrypted-plugin",
+  "docs": {
+    "agentNotes": "AGENTS.md",
+    "overview": "README.md",
+    "changelog": "CHANGELOG.md",
+    "security": "SECURITY.md",
+    "contributing": "CONTRIBUTING.md"
+  },
+  "qualityGate": {
+    "setup": {
+      "node": "npm ci"
+    },
+    "tests": {
+      "python": "npm test"
+    },
+    "build": {
+      "plugin": "npm run build",
+      "npmPackage": "npm pack --dry-run"
+    },
+    "inspection": {
+      "tool": "jetbrains",
+      "ide": "PyCharm",
+      "scopePreference": [
+        "changed_files",
+        "directory",
+        "whole_project"
+      ]
+    },
+    "docsRequiredWhen": [
+      "user-visible settings or behavior change",
+      "panel protocol or controller dependency changes",
+      "pairing or identity handling changes",
+      "packaging or installation changes",
+      "validation gate changes"
+    ]
+  },
+  "importantWorkflows": [
+    "Validation"
+  ],
+  "githubSettings": {
+    "expected": {
+      "hasIssues": true,
+      "hasProjects": false,
+      "hasWiki": false,
+      "allowMergeCommit": true,
+      "allowSquashMerge": false,
+      "allowRebaseMerge": false,
+      "deleteBranchOnMerge": true,
+      "actionsDefaultWorkflowPermissions": "read",
+      "actionsCanCreatePullRequests": false,
+      "actionsRequireShaPinning": true,
+      "privateVulnerabilityReporting": true,
+      "secretScanning": true,
+      "secretScanningPushProtection": true,
+      "dependabotSecurityUpdates": true
+    }
+  },
+  "pullRequests": {
+    "preferredMergeMethod": "merge",
+    "allowedMergeMethods": [
+      "merge"
+    ]
+  },
+  "branchProtection": {
+    "main": {
+      "system": "rulesets",
+      "rulesets": [
+        "Only the owner and automation update the default branch",
+        "Code-owner review for DIRECTION.md"
+      ],
+      "source": "codex-skills github/scripts/gh-rulesets.py standard pair",
+      "requiresPullRequest": true,
+      "bypass": [
+        "repository admin",
+        "automation GitHub App"
+      ],
+      "requiredStatusChecks": []
+    }
+  },
+  "release": {
+    "npmPackage": "@cbusillo/scrypted-qolsys",
+    "publish": "manual; owner approves each release before npm publish"
+  },
+  "cleanup": {
+    "deleteMergedLocalBranches": true,
+    "removeMergedCleanWorktrees": true
+  },
+  "metadataFreshness": {
+    "updateWhen": [
+      "validation gates change",
+      "important workflows change",
+      "branch protection changes",
+      "merge settings change",
+      "release process changes",
+      "repository visibility changes"
+    ]
+  }
+}
