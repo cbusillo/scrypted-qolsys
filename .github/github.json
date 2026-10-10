@@ -81,7 +81,8 @@
   },
   "release": {
     "npmPackage": "@cbusillo/scrypted-qolsys",
-    "publish": "manual; owner approves each release before npm publish"
+    "publish": "GitHub release published by the owner triggers .github/workflows/release.yml, which publishes through npm trusted publishing (OIDC, no token). The owner approves each release.",
+    "workflow": "Release"
   },
   "cleanup": {
     "deleteMergedLocalBranches": true,
