@@ -1,0 +1,24 @@
+name: Panel compatibility report
+description: Tell us whether the plugin works on your panel and firmware.
+labels: [compatibility]
+body:
+  - type: input
+    id: panel
+    attributes:
+      label: Panel model and firmware
+      placeholder: IQ Panel 4, firmware 4.6.0
+    validations:
+      required: true
+  - type: checkboxes
+    id: results
+    attributes:
+      label: What worked
+      options:
+        - label: Pairing
+        - label: Snapshots
+        - label: Live view
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Anything that behaved differently from the README.
