@@ -20,6 +20,8 @@ updates:
 
   - package-ecosystem: pip
     directory: "/src"
+    # Keep the floor at the oldest supported qolsys-controller release.
+    versioning-strategy: increase-if-necessary
     open-pull-requests-limit: 2
     cooldown:
       semver-major-days: 30
