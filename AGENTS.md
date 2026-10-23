@@ -5,9 +5,18 @@
 - Treat `main` as a protected no-direct-work branch. Create a focused task
   branch, push it, and open a pull request.
 - Use normal merge commits. Do not squash or rebase pull requests.
-- Run `npm ci`, `npm test` and `npm run build` before review, and wait for the
-  `validation` check on the current PR head before merge.
+- Run `npm ci`, selected local tests and `npm run build` before review, and wait
+  for the complete `validation` check on the current PR head before ready or merge.
 - Delete merged task branches and clean merged worktrees during closeout.
+
+## Tests
+
+Follow the [local/CI test command contract](https://github.com/cbusillo/codex-skills/blob/HEAD/skills/github/references/config-schema.md#workflow-metadata).
+Replace `{test_expression}` in `test.local` with a nonempty pytest `-k` expression.
+Pairing, panel-state and media-cleanup safety changes use whole affected module
+stems, such as `test_panel_client`; trace callers for other affected safety modules.
+CI runs the complete unfiltered `test.ci` command. Existing real-panel and release
+requirements below still apply.
 
 ## Releases
 

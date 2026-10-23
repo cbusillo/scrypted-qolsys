@@ -12,10 +12,10 @@ You need Node.js and [uv](https://docs.astral.sh/uv/).
 
 ```sh
 npm ci
-npm test
 npm run build
 ```
 
+Follow [test selection](AGENTS.md#tests) for local tests and the complete CI gate.
 Tests must pass without a real panel. If a change needs real-panel testing, say
 what you tested and on which panel and firmware in the pull request.
 
