@@ -15,7 +15,7 @@ npm ci
 npm run build
 ```
 
-Follow [test selection](AGENTS.md#tests) for local tests and the complete CI gate.
+Use the [focused test example](README.md#development) and follow the linked test-selection guide.
 Tests must pass without a real panel. If a change needs real-panel testing, say
 what you tested and on which panel and firmware in the pull request.
 

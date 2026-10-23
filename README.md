@@ -73,6 +73,7 @@ You need Node.js and [uv](https://docs.astral.sh/uv/).
 
 ```sh
 npm ci
+npm test -- -k test_panel_client
 npm run build
 ```
 
