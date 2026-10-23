@@ -72,13 +72,14 @@ Keep them if you move or reinstall Scrypted, or you will need to pair again.
 You need Node.js and [uv](https://docs.astral.sh/uv/).
 
 ```sh
-npm install
-npm test
+npm ci
+npm test -- -k test_panel_client
 npm run build
 ```
 
-`npm test` runs the Python tests on Python 3.12. They use made-up media and
-never talk to a real panel. `npm run build` writes `out/plugin.zip`.
+Use [test selection](https://github.com/cbusillo/scrypted-qolsys/blob/HEAD/AGENTS.md#tests)
+for focused local tests and the complete CI requirement. Automated tests use
+made-up media and never talk to a real panel.
 
 ## License
 
