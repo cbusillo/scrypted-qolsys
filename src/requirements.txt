@@ -1,2 +1,2 @@
 # Needs the controller release with the camera snapshot API (QolsysPicture.data).
-qolsys-controller>=1.11.0
+qolsys-controller>=1.12.5
