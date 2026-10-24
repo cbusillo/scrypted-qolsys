@@ -12,8 +12,9 @@
     "setup": {
       "node": "npm ci"
     },
-    "tests": {
-      "python": "npm test"
+    "test": {
+      "local": "npm test -- -k '{test_expression}'",
+      "ci": "npm test"
     },
     "build": {
       "plugin": "npm run build",
