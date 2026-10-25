@@ -1,5 +1,11 @@
 # Qolsys Panel Camera Agent Notes
 
+## What Qolsys Panel Camera does
+
+Qolsys Panel Camera is a Scrypted plugin that exposes a Qolsys IQ Panel's built-in camera as local snapshots and a limited live view.
+It uses the local IQ Remote connection, not Alarm.com, and does not provide continuous recording or arm/disarm controls.
+Evidence: [README.md](README.md#limits); hardware qualification is limited to the panel and firmware documented there.
+
 ## GitHub Workflow
 
 - Treat `main` as a protected no-direct-work branch. Create a focused task
