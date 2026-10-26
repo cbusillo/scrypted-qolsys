@@ -1,6 +1,6 @@
 {
   "name": "@cbusillo/scrypted-qolsys",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Snapshots and live view from the built-in camera of a Qolsys IQ Panel, over the panel's local IQ Remote connection.",
   "keywords": [
     "scrypted",

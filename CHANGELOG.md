@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.1
+
+- Restore the documented qolsys-controller minimum; newer releases remain allowed.
+- Test both the minimum and newest allowed direct dependencies in CI.
+
 ## 0.1.0
 
 First release.
