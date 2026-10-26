@@ -80,8 +80,7 @@ npm run build
 Use [test selection](https://github.com/cbusillo/scrypted-qolsys/blob/HEAD/AGENTS.md#tests)
 for focused local tests and the complete CI requirement. Automated tests use
 made-up media and never talk to a real panel. CI tests both the minimum and
-newest allowed direct dependencies. Renovate preserves supported dependency ranges
-when newer releases already satisfy them.
+newest allowed direct dependencies.
 
 ## License
 

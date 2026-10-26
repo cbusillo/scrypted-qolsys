@@ -35,7 +35,7 @@ jobs:
           test_command="$(jq -er '.qualityGate.test.ci | select(type == "string" and length > 0)' .github/github.json)"
           bash -euo pipefail -c "$test_command"
           uv pip compile --python-version 3.12 --resolution lowest-direct src/requirements.txt --output-file "$RUNNER_TEMP/minimum-requirements.txt"
-          UV_CONSTRAINT="$RUNNER_TEMP/minimum-requirements.txt" bash -euo pipefail -c "$test_command"
+          QOLSYS_REQUIREMENTS="$RUNNER_TEMP/minimum-requirements.txt" bash -euo pipefail -c "$test_command"
       - name: Build plugin package
         run: npm run build
       - name: Check package contents
