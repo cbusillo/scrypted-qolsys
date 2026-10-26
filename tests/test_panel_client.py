@@ -4,6 +4,7 @@ from types import SimpleNamespace
 from unittest.mock import AsyncMock
 
 import pytest
+from qolsys_controller.media_picture import QolsysPicture
 
 from camera_h264 import H264Parameters
 from panel_client import DESCRIPTION, SETTINGS_URI, STATE_URI, PanelClient
@@ -33,7 +34,7 @@ def client(tmp_path, monkeypatch):
     c = PanelClient(tmp_path, "192.0.2.1", "192.0.2.2", "02:00:00:00:00:01")
     c.connect = AsyncMock()
     c.controller.commands.camera.capture_snapshot = AsyncMock(
-        return_value=SimpleNamespace(data=b"fresh jpeg", filename="clock_100.jpg"))
+        return_value=QolsysPicture(data=b"fresh jpeg", filename="clock_100.jpg"))
     c.calls = []
     c.ident = None
     c.removed = False

@@ -1,6 +1,6 @@
 {
   "name": "@cbusillo/scrypted-qolsys",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Snapshots and live view from the built-in camera of a Qolsys IQ Panel, over the panel's local IQ Remote connection.",
   "keywords": [
     "scrypted",
@@ -28,7 +28,7 @@
   "scripts": {
     "build": "scrypted-webpack",
     "prepublishOnly": "NODE_ENV=production scrypted-webpack",
-    "test": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src:node_modules/@scrypted/sdk/types/scrypted_python uv run --no-project --no-config --python 3.12 --with pytest --with pytest-asyncio --with-requirements src/requirements.txt python -m pytest -p no:cacheprovider tests -q",
+    "test": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src:node_modules/@scrypted/sdk/types/scrypted_python uv run --no-project --no-config --python 3.12 --with pytest --with pytest-asyncio --with-requirements \"${QOLSYS_REQUIREMENTS:-src/requirements.txt}\" python -m pytest -p no:cacheprovider tests -q",
     "scrypted-deploy": "scrypted-deploy",
     "scrypted-deploy-debug": "scrypted-deploy-debug"
   },
