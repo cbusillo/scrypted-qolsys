@@ -8,8 +8,7 @@ Evidence: [README.md](README.md#limits); hardware qualification is limited to th
 
 ## GitHub Workflow
 
-- Treat `main` as a protected no-direct-work branch. Create a focused task
-  branch, push it, and open a pull request.
+- Follow the shared [GitHub workflow](https://github.com/cbusillo/codex-skills/blob/main/skills/github/SKILL.md).
 - Use normal merge commits. Do not squash or rebase pull requests.
 - Run `npm ci`, selected local tests and `npm run build` before review, and wait
   for the complete `validation` check on the current PR head before ready or merge.
